@@ -15,7 +15,7 @@ export const Canvas = () => {
       }
 
       setDroppedComponents((prevComponents) => [...prevComponents, item.component]);
-      return { name: 'Dustbin' };
+      return { name: 'Contain' };
     },
     collect: (monitor) => ({
       isOver: monitor.isOver(),
@@ -24,12 +24,7 @@ export const Canvas = () => {
   }));
 
   return (
-    <div ref={drop} style={{
-      padding: '1rem',
-      width: '100%',
-      height: '100%',
-      backgroundColor: 'lightgray',
-    }}>
+    <div ref={drop} className="canvas" style={{ height: '100vh' }}>
       {droppedComponents.map((Component, index) => (
         <div key={index}>
           {Component}

@@ -37,16 +37,16 @@ const FrameBindingContext = ({ children }) => {
   )
 };
 
-export const Main = () => {
+export const Main = ({ setStyleConfig }) => {
   return (
     <div className="flex h-screen">
       <div className="w-64 bg-gray-300 mt-20 p-4">
-        <Box name="Paper" />
-        <Container />
+        <Box name="Box" setStyleConfig={setStyleConfig} />
+        <Container setStyleConfig={setStyleConfig} />
       </div>
 
 
-      <Frame className="w-full h-screen mt-20">
+      <Frame className="w-full h-screen bg-gray-200 mt-[72px]">
         <DndFrame>
           <Canvas />
         </DndFrame>
